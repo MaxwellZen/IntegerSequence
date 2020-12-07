@@ -20,7 +20,7 @@ public class Range implements IntegerSequence{
   public int next() throws NoSuchElementException{
     if (hasNext()) {
       int temp = current;
-      current += 1;
+      current ++;
       return temp;
     } else {
       throw new NoSuchElementException("There is no next element");
