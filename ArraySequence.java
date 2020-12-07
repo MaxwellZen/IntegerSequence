@@ -26,10 +26,14 @@ public class ArraySequence implements IntegerSequence{
   public boolean hasNext() {
     return currentIndex < data.length;
   }
-  public int next() {
-    int temp = data[currentIndex];
-    currentIndex++;
-    return temp;
+  public int next() throws NoSuchElementException {
+    if (hasNext()) {
+      int temp = data[currentIndex];
+      currentIndex++;
+      return temp;
+    } else {
+      throw new NoSuchElementException("There is no next element");
+    }
   }
   public int length() {
     return data.length;
