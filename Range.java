@@ -5,6 +5,7 @@ public class Range implements IntegerSequence{
     this.start = start;
     this.end = end;
     this.current = this.start;
+    if (end < start) throw new IllegalArgumentException("the end value can't be less than the start value!");
   }
   public void reset(){
     current = start;
